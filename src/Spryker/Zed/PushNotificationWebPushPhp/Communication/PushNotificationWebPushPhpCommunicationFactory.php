@@ -11,9 +11,7 @@ use Spryker\Zed\Kernel\Communication\AbstractCommunicationFactory;
 
 /**
  * @method \Spryker\Zed\PushNotificationWebPushPhp\PushNotificationWebPushPhpConfig getConfig()
- * @method \Spryker\Zed\PushNotificationWebPushPhp\Persistence\PushNotificationWebPushPhpEntityManagerInterface getEntityManager()
  * @method \Spryker\Zed\PushNotificationWebPushPhp\Business\PushNotificationWebPushPhpFacadeInterface getFacade()
- * @method \Spryker\Zed\PushNotificationWebPushPhp\Persistence\PushNotificationWebPushPhpRepositoryInterface getRepository()
  */
 class PushNotificationWebPushPhpCommunicationFactory extends AbstractCommunicationFactory
 {
