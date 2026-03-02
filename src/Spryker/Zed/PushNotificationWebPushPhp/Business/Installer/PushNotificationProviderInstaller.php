@@ -21,17 +21,11 @@ class PushNotificationProviderInstaller implements PushNotificationProviderInsta
      */
     protected PushNotificationWebPushPhpToPushNotificationFacadeInterface $pushNotificationFacade;
 
-    /**
-     * @param \Spryker\Zed\PushNotificationWebPushPhp\Dependency\Facade\PushNotificationWebPushPhpToPushNotificationFacadeInterface $pushNotificationFacade
-     */
     public function __construct(PushNotificationWebPushPhpToPushNotificationFacadeInterface $pushNotificationFacade)
     {
         $this->pushNotificationFacade = $pushNotificationFacade;
     }
 
-    /**
-     * @return void
-     */
     public function installWebPushPhpProvider(): void
     {
         $pushNotificationProviderCriteriaTransfer = $this->createPushNotificationProviderCriteriaTransfer();
@@ -50,9 +44,6 @@ class PushNotificationProviderInstaller implements PushNotificationProviderInsta
         );
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\PushNotificationProviderCriteriaTransfer
-     */
     protected function createPushNotificationProviderCriteriaTransfer(): PushNotificationProviderCriteriaTransfer
     {
         $pushNotificationProviderConditionsTransfer = (new PushNotificationProviderConditionsTransfer())
@@ -62,9 +53,6 @@ class PushNotificationProviderInstaller implements PushNotificationProviderInsta
             ->setPushNotificationProviderConditions($pushNotificationProviderConditionsTransfer);
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\PushNotificationProviderCollectionRequestTransfer
-     */
     protected function createPushNotificationProviderCollectionRequestTransfer(): PushNotificationProviderCollectionRequestTransfer
     {
         $pushNotificationProviderTransfer = $this->createPushNotificationProviderTransfer();
@@ -74,9 +62,6 @@ class PushNotificationProviderInstaller implements PushNotificationProviderInsta
             ->addPushNotificationProvider($pushNotificationProviderTransfer);
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\PushNotificationProviderTransfer
-     */
     protected function createPushNotificationProviderTransfer(): PushNotificationProviderTransfer
     {
         return (new PushNotificationProviderTransfer())

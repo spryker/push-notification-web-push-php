@@ -11,10 +11,5 @@ use Spryker\Zed\PushNotificationWebPushPhp\Business\WebPush\MessageSentReport;
 
 interface MessageSentReportIdentifierBuilderInterface
 {
-    /**
-     * @param \Spryker\Zed\PushNotificationWebPushPhp\Business\WebPush\MessageSentReport $messageSentReport
-     *
-     * @return string
-     */
     public function builderIdentifier(MessageSentReport $messageSentReport): string;
 }

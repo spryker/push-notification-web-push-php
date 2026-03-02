@@ -103,9 +103,6 @@ class PushNotificationWebPushPhpFacadeTest extends Unit
         $this->assertEmpty($pushNotificationSubscriptionCollectionResponseTransfer->getErrors());
     }
 
-    /**
-     * @return void
-     */
     public function testSendNotificationShouldSendApplicableNotificationsOnlyWhenApplicableAndNonApplicablePushNotificationsGiven(): void
     {
         // Arrange
@@ -146,9 +143,6 @@ class PushNotificationWebPushPhpFacadeTest extends Unit
         $this->assertCount(1, $pushNotificationCollectionResponseTransfer->getPushNotifications());
     }
 
-    /**
-     * @return void
-     */
     public function testInstallWebPushPhpProviderShouldCreatePushNotificationProviderWhenWebPushPhpProviderDoesNotExist(): void
     {
         // Arrange
@@ -167,9 +161,6 @@ class PushNotificationWebPushPhpFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testInstallWebPushPhpProviderShouldNotDuplicatePushNotificationProviderWhenWebPushPhpProviderAlreadyExists(): void
     {
         // Arrange
@@ -193,9 +184,6 @@ class PushNotificationWebPushPhpFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testValidatePayloadLengthShouldReturnNoErrorsWhenValidPushNotificationsGiven(): void
     {
         // Arrange
@@ -212,9 +200,6 @@ class PushNotificationWebPushPhpFacadeTest extends Unit
         $this->assertEmpty($pushNotificationCollectionResponseTransfer->getErrors());
     }
 
-    /**
-     * @return void
-     */
     public function testValidatePayloadLengthShouldReturnErrorsWhenInvalidPushNotificationsGiven(): void
     {
         // Arrange

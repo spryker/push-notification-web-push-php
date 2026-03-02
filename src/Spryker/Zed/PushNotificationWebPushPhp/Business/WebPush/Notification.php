@@ -44,17 +44,11 @@ class Notification extends MinishlinkNotification
         $this->pushNotificationSubscriptionIdentifier = $pushNotificationSubscriptionIdentifier;
     }
 
-    /**
-     * @return int
-     */
     public function getPushNotificationIdentifier(): int
     {
         return $this->pushNotificationIdentifier;
     }
 
-    /**
-     * @return int
-     */
     public function getPushNotificationSubscriptionIdentifier(): int
     {
         return $this->pushNotificationSubscriptionIdentifier;

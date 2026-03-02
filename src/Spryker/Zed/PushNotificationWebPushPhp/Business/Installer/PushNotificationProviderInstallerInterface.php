@@ -9,8 +9,5 @@ namespace Spryker\Zed\PushNotificationWebPushPhp\Business\Installer;
 
 interface PushNotificationProviderInstallerInterface
 {
-    /**
-     * @return void
-     */
     public function installWebPushPhpProvider(): void;
 }

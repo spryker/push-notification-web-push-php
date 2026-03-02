@@ -18,9 +18,6 @@ class PushNotificationWebPushPhpToWebPushAdapter implements PushNotificationWebP
      */
     protected WebPush $webPush;
 
-    /**
-     * @param \Spryker\Zed\PushNotificationWebPushPhp\Business\WebPush\WebPush $webPush
-     */
     public function __construct(WebPush $webPush)
     {
         $this->webPush = $webPush;

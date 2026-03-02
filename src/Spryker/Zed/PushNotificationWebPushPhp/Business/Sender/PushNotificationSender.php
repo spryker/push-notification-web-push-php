@@ -48,13 +48,6 @@ class PushNotificationSender implements PushNotificationSenderInterface
      */
     protected MessageSentReportIdentifierBuilderInterface $messageSentReportIdentifierBuilder;
 
-    /**
-     * @param \Spryker\Zed\PushNotificationWebPushPhp\Business\Filter\PushNotificationFilterInterface $pushNotificationFilter
-     * @param \Spryker\Zed\PushNotificationWebPushPhp\Business\Creator\ErrorCreatorInterface $errorCreator
-     * @param \Spryker\Zed\PushNotificationWebPushPhp\Business\Creator\WebPushQueueCreatorInterface $webPushQueueCreator
-     * @param \Spryker\Zed\PushNotificationWebPushPhp\Business\Expander\PushNotificationSubscriptionDeliveryLogExpanderInterface $pushNotificationSubscriptionDeliveryLogExpander
-     * @param \Spryker\Zed\PushNotificationWebPushPhp\Business\Builder\MessageSentReportIdentifierBuilderInterface $messageSentReportIdentifierBuilder
-     */
     public function __construct(
         PushNotificationFilterInterface $pushNotificationFilter,
         ErrorCreatorInterface $errorCreator,
@@ -69,11 +62,6 @@ class PushNotificationSender implements PushNotificationSenderInterface
         $this->messageSentReportIdentifierBuilder = $messageSentReportIdentifierBuilder;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PushNotificationCollectionRequestTransfer $pushNotificationCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\PushNotificationCollectionResponseTransfer
-     */
     public function sendNotifications(
         PushNotificationCollectionRequestTransfer $pushNotificationCollectionRequestTransfer
     ): PushNotificationCollectionResponseTransfer {
@@ -134,12 +122,6 @@ class PushNotificationSender implements PushNotificationSenderInterface
         );
     }
 
-    /**
-     * @param int $pushNotificationIdentifier
-     * @param int $pushNotificationSubscriptionIdentifier
-     *
-     * @return \Generated\Shared\Transfer\PushNotificationSubscriptionDeliveryLogTransfer
-     */
     protected function createPushNotificationSubscriptionDeliveryLogTransfer(
         int $pushNotificationIdentifier,
         int $pushNotificationSubscriptionIdentifier

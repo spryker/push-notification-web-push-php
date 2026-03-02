@@ -55,19 +55,11 @@ class PushNotificationSubscriptionPayloadStructureValidator implements PushNotif
      */
     protected ErrorCreatorInterface $errorCreator;
 
-    /**
-     * @param \Spryker\Zed\PushNotificationWebPushPhp\Business\Creator\ErrorCreatorInterface $errorCreator
-     */
     public function __construct(ErrorCreatorInterface $errorCreator)
     {
         $this->errorCreator = $errorCreator;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PushNotificationSubscriptionCollectionTransfer $pushNotificationSubscriptionCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ErrorCollectionTransfer
-     */
     public function validateSubscriptions(
         PushNotificationSubscriptionCollectionTransfer $pushNotificationSubscriptionCollectionTransfer
     ): ErrorCollectionTransfer {
@@ -89,11 +81,6 @@ class PushNotificationSubscriptionPayloadStructureValidator implements PushNotif
         return $errorCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PushNotificationSubscriptionTransfer $pushNotificationSubscriptionTransfer
-     *
-     * @return bool
-     */
     protected function isApplicable(
         PushNotificationSubscriptionTransfer $pushNotificationSubscriptionTransfer
     ): bool {

@@ -37,9 +37,6 @@ use Spryker\Zed\PushNotificationWebPushPhp\PushNotificationWebPushPhpDependencyP
  */
 class PushNotificationWebPushPhpBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\PushNotificationWebPushPhp\Business\Validator\PushNotificationSubscriptionPayloadStructureValidatorInterface
-     */
     public function createPushNotificationSubscriptionPayloadStructureValidator(): PushNotificationSubscriptionPayloadStructureValidatorInterface
     {
         return new PushNotificationSubscriptionPayloadStructureValidator(
@@ -47,9 +44,6 @@ class PushNotificationWebPushPhpBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\PushNotificationWebPushPhp\Business\Validator\PushNotificationPayloadLengthValidatorInterface
-     */
     public function createPushNotificationPayloadLengthValidator(): PushNotificationPayloadLengthValidatorInterface
     {
         return new PushNotificationPayloadLengthValidator(
@@ -59,9 +53,6 @@ class PushNotificationWebPushPhpBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\PushNotificationWebPushPhp\Business\Sender\PushNotificationSenderInterface
-     */
     public function createPushNotificationCollectionSender(): PushNotificationSenderInterface
     {
         return new PushNotificationSender(
@@ -73,9 +64,6 @@ class PushNotificationWebPushPhpBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\PushNotificationWebPushPhp\Business\Installer\PushNotificationProviderInstallerInterface
-     */
     public function createPushNotificationProviderInstaller(): PushNotificationProviderInstallerInterface
     {
         return new PushNotificationProviderInstaller(
@@ -83,33 +71,21 @@ class PushNotificationWebPushPhpBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\PushNotificationWebPushPhp\Business\Filter\PushNotificationFilterInterface
-     */
     public function createPushNotificationFilter(): PushNotificationFilterInterface
     {
         return new PushNotificationFilter();
     }
 
-    /**
-     * @return \Spryker\Zed\PushNotificationWebPushPhp\Business\Creator\ErrorCreatorInterface
-     */
     public function createErrorCreator(): ErrorCreatorInterface
     {
         return new ErrorCreator();
     }
 
-    /**
-     * @return \Spryker\Zed\PushNotificationWebPushPhp\Dependency\External\PushNotificationWebPushPhpToSubscriptionInterface
-     */
     public function getWebPushSubscription(): PushNotificationWebPushPhpToSubscriptionInterface
     {
         return $this->getProvidedDependency(PushNotificationWebPushPhpDependencyProvider::WEB_PUSH_SUBSCRIPTION);
     }
 
-    /**
-     * @return \Spryker\Zed\PushNotificationWebPushPhp\Business\Creator\WebPushQueueCreatorInterface
-     */
     public function createWebPushQueueCreator(): WebPushQueueCreatorInterface
     {
         return new WebPushQueueCreator(
@@ -119,41 +95,26 @@ class PushNotificationWebPushPhpBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\PushNotificationWebPushPhp\Business\Expander\PushNotificationSubscriptionDeliveryLogExpanderInterface
-     */
     public function createPushNotificationSubscriptionDeliveryLogExpander(): PushNotificationSubscriptionDeliveryLogExpanderInterface
     {
         return new PushNotificationSubscriptionDeliveryLogExpander();
     }
 
-    /**
-     * @return \Spryker\Zed\PushNotificationWebPushPhp\Business\Builder\MessageSentReportIdentifierBuilderInterface
-     */
     public function createMessageSentReportIdentifierBuilder(): MessageSentReportIdentifierBuilderInterface
     {
         return new MessageSentReportIdentifierBuilder();
     }
 
-    /**
-     * @return \Spryker\Zed\PushNotificationWebPushPhp\Dependency\External\PushNotificationWebPushPhpToWebPushInterface
-     */
     public function getWebPushNotificator(): PushNotificationWebPushPhpToWebPushInterface
     {
         return $this->getProvidedDependency(PushNotificationWebPushPhpDependencyProvider::WEB_PUSH_NOTIFICATOR);
     }
 
-    /**
-     * @return \Spryker\Zed\PushNotificationWebPushPhp\Dependency\Service\PushNotificationWebPushPhpToUtilEncodingServiceInterface
-     */
     public function getUtilEncodingService(): PushNotificationWebPushPhpToUtilEncodingServiceInterface
     {
         return $this->getProvidedDependency(PushNotificationWebPushPhpDependencyProvider::SERVICE_UTIL_ENCODING);
     }
 
-    /**
-     * @return \Spryker\Zed\PushNotificationWebPushPhp\Dependency\Facade\PushNotificationWebPushPhpToPushNotificationFacadeInterface
-     */
     public function getPushNotificationFacade(): PushNotificationWebPushPhpToPushNotificationFacadeInterface
     {
         return $this->getProvidedDependency(PushNotificationWebPushPhpDependencyProvider::FACADE_PUSH_NOTIFICATION);

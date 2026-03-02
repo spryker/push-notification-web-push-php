@@ -36,11 +36,6 @@ class PushNotificationPayloadLengthValidator implements PushNotificationPayloadL
      */
     protected PushNotificationWebPushPhpConfig $pushNotificationWebPushPhpConfig;
 
-    /**
-     * @param \Spryker\Zed\PushNotificationWebPushPhp\Dependency\Service\PushNotificationWebPushPhpToUtilEncodingServiceInterface $utilEncodingService
-     * @param \Spryker\Zed\PushNotificationWebPushPhp\Business\Creator\ErrorCreatorInterface $errorCreator
-     * @param \Spryker\Zed\PushNotificationWebPushPhp\PushNotificationWebPushPhpConfig $pushNotificationWebPushPhpConfig
-     */
     public function __construct(
         PushNotificationWebPushPhpToUtilEncodingServiceInterface $utilEncodingService,
         ErrorCreatorInterface $errorCreator,
@@ -51,11 +46,6 @@ class PushNotificationPayloadLengthValidator implements PushNotificationPayloadL
         $this->pushNotificationWebPushPhpConfig = $pushNotificationWebPushPhpConfig;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PushNotificationCollectionTransfer $pushNotificationCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ErrorCollectionTransfer
-     */
     public function validatePayloadLength(
         PushNotificationCollectionTransfer $pushNotificationCollectionTransfer
     ): ErrorCollectionTransfer {
@@ -77,11 +67,6 @@ class PushNotificationPayloadLengthValidator implements PushNotificationPayloadL
         return $errorCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PushNotificationTransfer $pushNotificationTransfer
-     *
-     * @return bool
-     */
     protected function isApplicable(PushNotificationTransfer $pushNotificationTransfer): bool
     {
         $pushNotificationProviderName = $pushNotificationTransfer->getProviderOrFail()->getNameOrFail();
@@ -89,11 +74,6 @@ class PushNotificationPayloadLengthValidator implements PushNotificationPayloadL
         return $pushNotificationProviderName === PushNotificationWebPushPhpConfig::WEB_PUSH_PHP_PROVIDER_NAME;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PushNotificationTransfer $pushNotificationTransfer
-     *
-     * @return bool
-     */
     protected function isValid(PushNotificationTransfer $pushNotificationTransfer): bool
     {
         $payloadEncoded = $this->utilEncodingService->encodeJson($pushNotificationTransfer->getPayload()) ?: '';

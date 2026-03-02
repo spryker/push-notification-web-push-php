@@ -11,12 +11,6 @@ use Generated\Shared\Transfer\ErrorTransfer;
 
 class ErrorCreator implements ErrorCreatorInterface
 {
-    /**
-     * @param string $entityIdentifier
-     * @param string $message
-     *
-     * @return \Generated\Shared\Transfer\ErrorTransfer
-     */
     public function createErrorTransfer(string $entityIdentifier, string $message): ErrorTransfer
     {
         return (new ErrorTransfer())

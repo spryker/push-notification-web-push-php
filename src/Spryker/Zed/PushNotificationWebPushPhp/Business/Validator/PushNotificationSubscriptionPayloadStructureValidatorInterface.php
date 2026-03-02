@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\PushNotificationSubscriptionCollectionTransfer;
 
 interface PushNotificationSubscriptionPayloadStructureValidatorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\PushNotificationSubscriptionCollectionTransfer $pushNotificationSubscriptionCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ErrorCollectionTransfer
-     */
     public function validateSubscriptions(
         PushNotificationSubscriptionCollectionTransfer $pushNotificationSubscriptionCollectionTransfer
     ): ErrorCollectionTransfer;

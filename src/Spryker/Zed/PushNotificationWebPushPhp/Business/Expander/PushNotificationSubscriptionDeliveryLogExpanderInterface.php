@@ -12,12 +12,6 @@ use Generated\Shared\Transfer\PushNotificationTransfer;
 
 interface PushNotificationSubscriptionDeliveryLogExpanderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\PushNotificationTransfer $pushNotificationTransfer
-     * @param \Generated\Shared\Transfer\PushNotificationSubscriptionDeliveryLogTransfer $pushNotificationSubscriptionDeliveryLogTransfer
-     *
-     * @return \Generated\Shared\Transfer\PushNotificationTransfer
-     */
     public function extendPushNotificationPushNotificationSubscriptionDeliveryLogs(
         PushNotificationTransfer $pushNotificationTransfer,
         PushNotificationSubscriptionDeliveryLogTransfer $pushNotificationSubscriptionDeliveryLogTransfer

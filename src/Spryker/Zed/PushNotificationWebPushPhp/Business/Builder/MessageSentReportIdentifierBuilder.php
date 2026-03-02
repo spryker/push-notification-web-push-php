@@ -16,11 +16,6 @@ class MessageSentReportIdentifierBuilder implements MessageSentReportIdentifierB
      */
     protected const IDENTIFIER_TEMPLATE = 'notificationId:%d-subscriptionId:%d';
 
-    /**
-     * @param \Spryker\Zed\PushNotificationWebPushPhp\Business\WebPush\MessageSentReport $messageSentReport
-     *
-     * @return string
-     */
     public function builderIdentifier(MessageSentReport $messageSentReport): string
     {
         return sprintf(

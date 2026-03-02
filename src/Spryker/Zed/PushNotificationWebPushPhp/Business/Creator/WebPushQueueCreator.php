@@ -30,11 +30,6 @@ class WebPushQueueCreator implements WebPushQueueCreatorInterface
      */
     protected PushNotificationWebPushPhpToUtilEncodingServiceInterface $utilEncodingService;
 
-    /**
-     * @param \Spryker\Zed\PushNotificationWebPushPhp\Dependency\External\PushNotificationWebPushPhpToSubscriptionInterface $pushNotificationWebPushPhpToSubscriptionAdapter
-     * @param \Spryker\Zed\PushNotificationWebPushPhp\Dependency\External\PushNotificationWebPushPhpToWebPushInterface $webPush
-     * @param \Spryker\Zed\PushNotificationWebPushPhp\Dependency\Service\PushNotificationWebPushPhpToUtilEncodingServiceInterface $utilEncodingService
-     */
     public function __construct(
         PushNotificationWebPushPhpToSubscriptionInterface $pushNotificationWebPushPhpToSubscriptionAdapter,
         PushNotificationWebPushPhpToWebPushInterface $webPush,
@@ -59,11 +54,6 @@ class WebPushQueueCreator implements WebPushQueueCreatorInterface
         return $this->webPush;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PushNotificationTransfer $pushNotificationTransfer
-     *
-     * @return void
-     */
     protected function queuePushNotificationSubscriptions(PushNotificationTransfer $pushNotificationTransfer): void
     {
         foreach ($pushNotificationTransfer->getSubscriptions() as $pushNotificationSubscriptionTransfer) {

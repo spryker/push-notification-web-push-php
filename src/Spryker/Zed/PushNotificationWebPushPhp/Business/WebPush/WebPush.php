@@ -132,12 +132,6 @@ class WebPush extends MinishlinkWebPush
         return $promises;
     }
 
-    /**
-     * @param \Psr\Http\Message\RequestInterface $request
-     * @param \Spryker\Zed\PushNotificationWebPushPhp\Business\WebPush\Notification $notification
-     *
-     * @return \Closure
-     */
     protected function getSuccessfulHandler(RequestInterface $request, Notification $notification): Closure
     {
         return function ($response) use ($request, $notification) {
@@ -151,11 +145,6 @@ class WebPush extends MinishlinkWebPush
         };
     }
 
-    /**
-     * @param \Spryker\Zed\PushNotificationWebPushPhp\Business\WebPush\Notification $notification
-     *
-     * @return \Closure
-     */
     protected function getFailureHandler(Notification $notification): Closure
     {
         return function ($reason) use ($notification) {

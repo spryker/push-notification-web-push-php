@@ -14,20 +14,10 @@ use Generated\Shared\Transfer\PushNotificationProviderCriteriaTransfer;
 
 interface PushNotificationWebPushPhpToPushNotificationFacadeInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\PushNotificationProviderCriteriaTransfer $pushNotificationProviderCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\PushNotificationProviderCollectionTransfer
-     */
     public function getPushNotificationProviderCollection(
         PushNotificationProviderCriteriaTransfer $pushNotificationProviderCriteriaTransfer
     ): PushNotificationProviderCollectionTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\PushNotificationProviderCollectionRequestTransfer $pushNotificationProviderCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\PushNotificationProviderCollectionResponseTransfer
-     */
     public function createPushNotificationProviderCollection(
         PushNotificationProviderCollectionRequestTransfer $pushNotificationProviderCollectionRequestTransfer
     ): PushNotificationProviderCollectionResponseTransfer;

@@ -40,11 +40,6 @@ class PushNotificationWebPushPhpDependencyProvider extends AbstractBundleDepende
      */
     public const WEB_PUSH_SUBSCRIPTION = 'WEB_PUSH_SUBSCRIPTION';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = $this->addUtilEncodingService($container);
@@ -55,11 +50,6 @@ class PushNotificationWebPushPhpDependencyProvider extends AbstractBundleDepende
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addPushNotificationFacade(Container $container): Container
     {
         $container->set(static::FACADE_PUSH_NOTIFICATION, function (Container $container) {
@@ -71,11 +61,6 @@ class PushNotificationWebPushPhpDependencyProvider extends AbstractBundleDepende
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addUtilEncodingService(Container $container): Container
     {
         $container->set(static::SERVICE_UTIL_ENCODING, function (Container $container) {
@@ -87,11 +72,6 @@ class PushNotificationWebPushPhpDependencyProvider extends AbstractBundleDepende
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addWebPushNotificator(Container $container): Container
     {
         $container->set(static::WEB_PUSH_NOTIFICATOR, function () {
@@ -103,11 +83,6 @@ class PushNotificationWebPushPhpDependencyProvider extends AbstractBundleDepende
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addWebPushSubscription(Container $container): Container
     {
         $container->set(static::WEB_PUSH_SUBSCRIPTION, function () {
@@ -117,9 +92,6 @@ class PushNotificationWebPushPhpDependencyProvider extends AbstractBundleDepende
         return $container;
     }
 
-    /**
-     * @return \Spryker\Zed\PushNotificationWebPushPhp\Business\WebPush\WebPush
-     */
     protected function getWebPush(): WebPush
     {
         return new WebPush($this->getConfig()->getVAPIDAuthCredentials());

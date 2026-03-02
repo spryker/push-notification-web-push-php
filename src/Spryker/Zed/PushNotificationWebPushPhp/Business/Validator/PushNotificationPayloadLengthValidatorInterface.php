@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\PushNotificationCollectionTransfer;
 
 interface PushNotificationPayloadLengthValidatorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\PushNotificationCollectionTransfer $pushNotificationCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ErrorCollectionTransfer
-     */
     public function validatePayloadLength(
         PushNotificationCollectionTransfer $pushNotificationCollectionTransfer
     ): ErrorCollectionTransfer;

@@ -27,11 +27,6 @@ class PushNotificationWebPushPhpToPushNotificationFacadeBridge implements PushNo
         $this->pushNotificationFacade = $pushNotificationFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PushNotificationProviderCriteriaTransfer $pushNotificationProviderCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\PushNotificationProviderCollectionTransfer
-     */
     public function getPushNotificationProviderCollection(
         PushNotificationProviderCriteriaTransfer $pushNotificationProviderCriteriaTransfer
     ): PushNotificationProviderCollectionTransfer {
@@ -40,11 +35,6 @@ class PushNotificationWebPushPhpToPushNotificationFacadeBridge implements PushNo
             ->getPushNotificationProviderCollection($pushNotificationProviderCriteriaTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PushNotificationProviderCollectionRequestTransfer $pushNotificationProviderCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\PushNotificationProviderCollectionResponseTransfer
-     */
     public function createPushNotificationProviderCollection(
         PushNotificationProviderCollectionRequestTransfer $pushNotificationProviderCollectionRequestTransfer
     ): PushNotificationProviderCollectionResponseTransfer {

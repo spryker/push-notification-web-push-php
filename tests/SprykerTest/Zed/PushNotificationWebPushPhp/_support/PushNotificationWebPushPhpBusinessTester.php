@@ -58,9 +58,6 @@ class PushNotificationWebPushPhpBusinessTester extends Actor
      */
     protected const NOT_APPLICABLE_PROVIDER_NAME = 'extra-provider';
 
-    /**
-     * @return \Generated\Shared\Transfer\PushNotificationTransfer
-     */
     public function createValidPushNotificationTransfer(): PushNotificationTransfer
     {
         $pushNotificationBuilder = new PushNotificationBuilder(
@@ -77,9 +74,6 @@ class PushNotificationWebPushPhpBusinessTester extends Actor
         return $pushNotificationTransfer;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\PushNotificationTransfer
-     */
     public function createInvalidPushNotificationTransfer(): PushNotificationTransfer
     {
         $pushNotificationBuilder = new PushNotificationBuilder(
@@ -96,9 +90,6 @@ class PushNotificationWebPushPhpBusinessTester extends Actor
         return $pushNotificationTransfer;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\PushNotificationTransfer
-     */
     public function createApplicablePushNotification(): PushNotificationTransfer
     {
         return $this->havePushNotification(
@@ -111,9 +102,6 @@ class PushNotificationWebPushPhpBusinessTester extends Actor
         );
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\PushNotificationTransfer
-     */
     public function createNotApplicablePushNotification(): PushNotificationTransfer
     {
         return $this->havePushNotification(
@@ -126,11 +114,6 @@ class PushNotificationWebPushPhpBusinessTester extends Actor
         );
     }
 
-    /**
-     * @param string $name
-     *
-     * @return \Orm\Zed\PushNotification\Persistence\SpyPushNotificationProvider|null
-     */
     public function findPushNotificationProviderEntityByName(string $name): ?SpyPushNotificationProvider
     {
         return $this->createPushNotificationProviderQuery()
@@ -138,12 +121,6 @@ class PushNotificationWebPushPhpBusinessTester extends Actor
             ->findOne();
     }
 
-    /**
-     * @param int $pushNotificationIdentifier
-     * @param int $pushNotificationSubscriptionIdentifier
-     *
-     * @return void
-     */
     public function mockWebPusherWithOneMessage(int $pushNotificationIdentifier, int $pushNotificationSubscriptionIdentifier): void
     {
         $this->mockFactoryMethod(
@@ -177,17 +154,11 @@ class PushNotificationWebPushPhpBusinessTester extends Actor
         return $webPushAdapterMock;
     }
 
-    /**
-     * @return \Orm\Zed\PushNotification\Persistence\SpyPushNotificationProviderQuery
-     */
     public function createPushNotificationProviderQuery(): SpyPushNotificationProviderQuery
     {
         return SpyPushNotificationProviderQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\PushNotification\Persistence\SpyPushNotificationQuery
-     */
     protected function createPushNotificationQuery(): SpyPushNotificationQuery
     {
         return SpyPushNotificationQuery::create();

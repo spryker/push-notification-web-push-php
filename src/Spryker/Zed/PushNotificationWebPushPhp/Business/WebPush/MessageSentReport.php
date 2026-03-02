@@ -23,14 +23,6 @@ class MessageSentReport extends MinishlinkMessageSentReport
      */
     protected int $pushNotificationSubscriptionIdentifier;
 
-    /**
-     * @param int $pushNotificationIdentifier
-     * @param int $pushNotificationSubscriptionIdentifier
-     * @param \Psr\Http\Message\RequestInterface $request
-     * @param \Psr\Http\Message\ResponseInterface|null $response
-     * @param bool $success
-     * @param string $reason
-     */
     public function __construct(
         int $pushNotificationIdentifier,
         int $pushNotificationSubscriptionIdentifier,
@@ -45,17 +37,11 @@ class MessageSentReport extends MinishlinkMessageSentReport
         $this->pushNotificationSubscriptionIdentifier = $pushNotificationSubscriptionIdentifier;
     }
 
-    /**
-     * @return int
-     */
     public function getPushNotificationIdentifier(): int
     {
         return $this->pushNotificationIdentifier;
     }
 
-    /**
-     * @return int
-     */
     public function getPushNotificationSubscriptionIdentifier(): int
     {
         return $this->pushNotificationSubscriptionIdentifier;
