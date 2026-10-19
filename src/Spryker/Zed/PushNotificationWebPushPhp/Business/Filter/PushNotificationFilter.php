@@ -21,6 +21,7 @@ class PushNotificationFilter implements PushNotificationFilterInterface
         ArrayObject $pushNotificationTransfers,
         string $providerName
     ): ArrayObject {
+        /** @var \ArrayObject<int, \Generated\Shared\Transfer\PushNotificationTransfer> $filteredPushNotificationTransfers */
         $filteredPushNotificationTransfers = new ArrayObject();
         foreach ($pushNotificationTransfers as $i => $pushNotificationTransfer) {
             if ($pushNotificationTransfer->getProviderOrFail()->getNameOrFail() !== $providerName) {
